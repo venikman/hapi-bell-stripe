@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-(async () => {
+const script = async () => {
     const browser = await puppeteer.launch({
         headless          : false,
         ignoreHTTPSErrors : true
@@ -28,11 +28,12 @@ const puppeteer = require('puppeteer');
     await page.type('#accountNumber', '000123456789');
     const confirmAccountNumberInput = await page.waitFor('#confirmAccountNumber');
     await confirmAccountNumberInput.type('000123456789');
-    const secondsToWait = 75;
+    const secondsToWait = 90;
     await page.waitFor(secondsToWait * 1000 - (Date.now() - startTime));
     await page.click('.bs-Button');
     await page.waitForFunction(() => {
         return document.body.innerText === 'Hello, world!';
     });
     await browser.close();
-})();
+};
+ module.exports = script;

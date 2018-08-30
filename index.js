@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const Hapi = require('hapi');
 const bell = require('bell');
+const script = require('./script');
 const env = require('../.env.bell');
 
 const server = Hapi.server({
@@ -55,6 +56,7 @@ const init = async () => {
     }]);
     await server.start();
     console.log(`Server running at: ${server.info.uri}`);
+    script();
 };
 
 process.on('unhandledRejection', (err) => {
