@@ -10,8 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bell": "github:sholladay/bell#auth0-and-stripe",
     "hapi": "^17.5.3",
-    "puppeteer": "^1.7.0"
+    "puppeteer": "^1.7.0",
+    "bell": "git@github.com:sholladay/bell.git"
   }
 }

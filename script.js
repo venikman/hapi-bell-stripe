@@ -28,7 +28,7 @@ const script = async () => {
     await page.type('#accountNumber', '000123456789');
     const confirmAccountNumberInput = await page.waitFor('#confirmAccountNumber');
     await confirmAccountNumberInput.type('000123456789');
-    const secondsToWait = 90;
+    const secondsToWait = 120;
     await page.waitFor(secondsToWait * 1000 - (Date.now() - startTime));
     await page.click('.bs-Button');
     await page.waitForFunction(() => {

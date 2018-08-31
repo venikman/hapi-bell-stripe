@@ -23,11 +23,10 @@ const init = async () => {
     ]);
     server.auth.strategy('stripe', 'bell', {
         provider     : 'stripe',
-        ttl          : 60 * 60 * 24,
+        ttl          : 1000 * 60 * 60 * 24,
         password     : env.key,
         clientId     : env.id,
         clientSecret : env.secret,
-        scope        : ['read_write'],
         isHttpOnly   : true,
         isSecure     : true,
         forceHttps   : true
